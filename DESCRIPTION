@@ -1,0 +1,24 @@
+Package: worker
+Type: Package
+Title: Workers' Compensation Funding Allocation
+Version: 1.0.0
+Author: William G. Foote and Robert Penna
+Maintainer: The package maintainer <wgfoote@gmail.com>
+Description: Suppose we want to self-insure workers' compensation claims in our organization. This function helps an analyst to build a matrix rows of forward period unit cashflow with columns of funding contracts which specify forward rates, start and finish dates. Returned are the initial contract specification and the cashflow matrix.
+    The analyst solves for the initial seed capital given contract specifications for capital across forward periods needed, all to match cashflow requirements in forward periods.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 4.2.0)
+Imports: 
+    tidyverse, 
+    lpSolve
+Suggests:
+    knitr
+URL: https://github.com/wgfoote/worker
+BugReports: https://github.com/wgfoote/worker/issues
+VignetteBuilder: 
+    knitr
+SystemRequirements: pandoc

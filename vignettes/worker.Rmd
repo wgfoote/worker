@@ -1,0 +1,106 @@
+---
+title: "Funding Self-Insurance"
+author: "William Foote and Robert Penna"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Funding Self-Insurance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+##  Purpose
+
+The purpose of the **worker** package is to design a self-insuring program, say, for workers' compensation claims. At its base we have claims requirements across several future periods and funding contracts with cash flows going out (investment) and coming in (returns). The purpose of the fund is to align requirements with contracts. The ultimate end for those who contribute to the fund is to guarantee to their workers and their other beneficiaries, that even periods with extreme claims will be funded.
+
+## Process
+
+The ingredients are three:
+
+1. Requirements in future periods.
+
+2. Contracts incurring investments and earning returns across the time horizon of the requirements.
+
+3. Objectives to be met, including the amount of capital needed to fund requirements.
+
+The model
+
+
+
+
+## Tales of tails
+
+Let's set the scene. Make-a-Pie CEO and owner Simone Tortiere meets regularly with other vegan food  company owners. This month their agenda covers the rising incidence of and cost of covering workers compensation claims. A claim arises when a worker, on the job, becomes disabled for any reason. The [New York State Insurance Fund (NYSIF)](https://ww3.nysif.com/Home/Employer/LookingForInsurance/NYSIFInsurancePlans) offers several plans and products to employer policy-holders. The vegan company owners around the table try to get a handle on claims, rejection of claims, required drug formularies and treatment codes, increasing cost of disability, loss of key personnel, among other things. The COVID-19 pandemic alone has awareness and costs of production and service by over 30\%. Workers' compensation claims have kept pace with this rise.
+
+Many of the vegan businesses are NYSIF policy-holders. For example, if a covered worker falls, has extended health issues, the fund will cover expenses for a specific time frame, using specified drug and other therapy treatments, all under the direction of NYSIF medical associates. Premiums will undoubtedly rise with more claims experience. Safety Group plans, while paying dividends to policy-holders with relatively low claims experiences, often groups all food-related workers into one class. This may, or may not, disadvantage the vegan food industry. 
+
+The group decides on this course of action.
+
+- Gather workers compensation claims experience across the group
+
+- Attempt to model future claims to understand the range and shape of the distribution of claims, all based on existing claims experience
+
+- Use the future claims model to simulate a self-insurance portfolio
+
+- Suggest and implement two scenarios to sensitize the group to alternative approaches to funding
+
+All of this is a very tall order for experts in vegan food production and service. Tortiere has already talked to her Bronx consultants Rose Mascetti and Marie Ortiz (Mascetti-Ortiz Analytics) about the issues. They have already provided valuable advice and plans for production, pricing, and strategies for expansion of the business. Tortiere recommends to her colleagues that Mascetti-Ortiz Analytics service can at least start to structure the group's next conversation in a month with some provisional results. The vegan food employers anoint a sub-committee to commission the work. They call themselves the Vegan Workers Group.
+
+## It always starts with data
+
+We work with Rose and Marie on their analytics team. Does the analysis always start with data? Not really, because we actually begin with Tortiere's question: can we insure ourselves and be better off? To help answer this question we begin our analysis by gathering 12 years of annual workers claim experience from several of the vegan establishments. 
+Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+
+- Never uses retina figures
+- Has a smaller default figure size
+- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+
+## Vignette Info
+
+Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+
+## Styles
+
+The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+
+    output: 
+      rmarkdown::html_vignette:
+        css: mystyles.css
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+You can enable figure captions by `fig_caption: yes` in YAML:
+
+    output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+
+Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+
+## More Examples
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(mtcars, 10))
+```
+
+Also a quote using `>`:
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))
