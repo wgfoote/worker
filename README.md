@@ -7,5 +7,5 @@ You can install this package by executing this code into the R console
 devtools::install_github( "wgfoote/worker" )
 
 ```
-Enter `??fund_flow` or `??fund_capital` to get information on how to run the two functions in the package and experiment with examples of code using the functions.
+Enter `??fund_flow` or `??fund_capital` in the R console to get information on how to run the two functions in the package and experiment with examples of code using the functions.
 
